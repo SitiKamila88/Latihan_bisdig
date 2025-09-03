@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contoh Tag <a> & Jenis Hyperlink</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;margin:2rem;}
+    code{background:#f5f5f5;padding:.15rem .35rem;border-radius:.35rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+    .card{border:1px solid #e5e7eb;border-radius:12px;padding:1rem}
+    h1,h2{margin-top:1.2rem}
+    nav a{margin-right:.75rem}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Contoh Tag <code>&lt;a&gt;</code> dan Jenis Hyperlink</h1>
+    <p>Halaman ini mendemonstrasikan berbagai tipe hyperlink: absolute, relative, email, dan targeting (atribut <code>target</code>).</p>
+  </header>
+
+  <nav>
+    <!-- Internal jump link (fragment) -->
+    <a href="#absolute">Absolute</a>
+    <a href="#relative">Relative</a>
+    <a href="#email">Email</a>
+    <a href="#targeting">Targeting</a>
+  </nav>
+
+  <section id="absolute" class="card">
+    <h2>Absolute Hyperlink</h2>
+    <p>URL lengkap dengan protokol, domain, dan path.</p>
+    <p>Contoh: 
+      <a href="https://www.example.com/products/item-123">Kunjungi contoh produk (example.com)</a>
+    </p>
+    <pre><code>&lt;a href="https://www.example.com/products/item-123"&gt;...&lt;/a&gt;</code></pre>
+  </section>
+
+  <section id="relative" class="card">
+    <h2>Relative Hyperlink</h2>
+    <p>URL relatif terhadap lokasi file saat ini.</p>
+    <div class="grid">
+      <div>
+        <p>Relatif ke folder yang sama:</p>
+        <pre><code>&lt;a href="tentang.html"&gt;Tentang Kami&lt;/a&gt;</code></pre>
+        <p><a href="tentang.html">(Demo) tentang.html</a></p>
+      </div>
+      <div>
+        <p>Relatif ke subfolder:</p>
+        <pre><code>&lt;a href="/assets/docs/panduan.pdf"&gt;Panduan&lt;/a&gt;</code></pre>
+        <p><a href="/assets/docs/panduan.pdf">(Demo) /assets/docs/panduan.pdf</a></p>
+      </div>
+      <div>
+        <p>Relatif naik satu folder:</p>
+        <pre><code>&lt;a href="../index.html"&gt;Kembali ke Beranda&lt;/a&gt;</code></pre>
+        <p><a href="../index.html">(Demo) ../index.html</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="email" class="card">
+    <h2>Email Hyperlink</h2>
+    <p>Membuka aplikasi email dengan alamat/subject terisi.</p>
+    <p>
+      <a href="mailto:support@contoh.co.id?subject=Butuh%20Bantuan&body=Halo%20Tim%20Support,">Email Support</a>
+    </p>
+    <pre><code>&lt;a href="mailto:support@contoh.co.id?subject=Butuh%20Bantuan&amp;body=Halo"&gt;Email Support&lt;/a&gt;</code></pre>
+  </section>
+
+  <section id="targeting" class="card">
+    <h2>Targeting Hyperlink (atribut <code>target</code>)</h2>
+    <p>Mengontrol di mana link dibuka.</p>
+    <ul>
+      <li>
+        <a href="https://www.example.com" target="_self">Buka di tab/rame yang sama (<code>_self</code>)</a>
+      </li>
+      <li>
+        <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">Buka di tab baru (<code>_blank</code>)</a>
+      </li>
+      <li>
+        <a href="#absolute" target="_self">Loncat ke bagian Absolute (fragment di halaman yang sama)</a>
+      </li>
+      <li>
+        <a href="child.html" target="contentFrame">Buka di nama jendela/frame khusus (<code>contentFrame</code>)</a>
+      </li>
+    </ul>
+    <pre><code>&lt;a href="https://..." target="_blank" rel="noopener noreferrer"&gt;Buka tab baru&lt;/a&gt;</code></pre>
+  </section>
+
+  <footer>
+    <p>Catatan: beberapa tautan demo mungkin 404 jika file tidak ada di proyek Anda. Kode ditujukan sebagai contoh penulisan.</p>
+  </footer>
+</body>
+</html>
